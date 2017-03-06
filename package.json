@@ -1,0 +1,29 @@
+{
+  "name": "flickerapi",
+  "version": "1.0.0",
+  "description": "implementing flicker api",
+  "main": "server/server.js",
+  "dependencies": {
+    "angular": "^1.6.2",
+    "angular-route": "^1.6.2",
+    "body-parser": "^1.17.1",
+    "express": "^4.15.2",
+    "morgan": "^1.8.1",
+    "path": "^0.12.7",
+    "request": "^2.80.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/iamongit/FlickerAPI.git"
+  },
+  "author": "Aamir",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/iamongit/FlickerAPI/issues"
+  },
+  "homepage": "https://github.com/iamongit/FlickerAPI#readme"
+}
