@@ -5,7 +5,7 @@ var app = express();
 var request = require('request');
 var path = require('path');
 var bodyParser = require('body-parser');
-app.set('port', 2000);
+app.set('port', process.env.PORT || 2000);
 app.use(morgan('dev'));
 app.use(bodyParser.json());
 
