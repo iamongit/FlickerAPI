@@ -1,6 +1,12 @@
 <div ng-controller="appController">
     <form name = "getPics">
     	<input type='text' placeholder="Type in the tag" ng-model='tags.requiredTag'>
-    	<button ng-click='postRequest()'> Get Pictures </button>
+    	<button ng-click='postRequest(); reset()'> Get Pictures </button>
 	</form>
+	<div ng-repeat="image in links">     
+	    <figure class="floating">
+	      <img ng-src="{{ image.link }}" alt="Macaque in the trees" class="rcorners3" style='width:70%;' border="2" alt="Null">
+	      <figcaption class='title'>{{ image.title }}"</figcaption>
+	    </figure>
+	</div>
 </div>

@@ -33,6 +33,9 @@ angular.module('app', ['ngRoute'])
     	console.log('post request failed')
   		});
   		$scope.tags.requiredTag = '';
+	},
+	$scope.reset = function(){
+		$scope.links = [];
 	}
 
 })

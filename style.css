@@ -1,0 +1,23 @@
+body{
+	font-size: 25px;
+	text-align: center;
+}
+
+form {
+	padding-top: 10%;
+	text-align: center;
+}
+
+img{
+	display: block;
+    margin: auto;
+}
+
+input{
+	font-size: 40px; // for say a select
+	width: 250px;
+}
+
+button{
+	font-size: 40px; 
+}
