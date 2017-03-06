@@ -13,7 +13,7 @@ angular.module('app', ['ngRoute'])
 	$scope.postRequest = function(){
 		$http({
   		method: 'POST',
-  		url: 'http://localhost:2000/',
+  		url: '/',
   		headers: {
    			'Content-Type': 'application/JSON'
  		},
