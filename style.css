@@ -21,3 +21,8 @@ input{
 button{
 	font-size: 40px; 
 }
+
+.title{
+	padding-bottom: 20px;
+	text-shadow: 0.5px 0.5px grey;
+}

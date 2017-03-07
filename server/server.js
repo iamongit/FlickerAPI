@@ -31,9 +31,7 @@ var options = { method: 'GET',
    { 'postman-token': '4849b7a9-9c9b-c91d-15d4-51ae0ee5409c',
      'cache-control': 'no-cache' } 
  };
-
  
-  // options.qs.tags = req.body.tag;
   request(options, function (error, response, body) {
 	  if (error){
 	  	throw new Error(error);
