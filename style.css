@@ -1,28 +1,73 @@
 body{
 	font-size: 25px;
 	text-align: center;
+	background: url(wall2.jpg) grey;
+	background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+.webText{
+	color:white;
+	font-size: 30px;
 }
 
 form {
-	padding-top: 10%;
+	padding-top: 23%;
 	text-align: center;
+	border-color: white;
 }
+
 
 img{
 	display: block;
     margin: auto;
+    border-color: white;
 }
 
 input{
-	font-size: 40px; // for say a select
-	width: 250px;
+	margin-top: 10px;
+	font-size: 30px;
+	width: 320px;
+	border:7px;
+	border-color: white;
+	border-radius: 3px;
 }
 
 button{
-	font-size: 40px; 
+	font-size: 30px; 
+	border:7px;
+	border-color: white;
+	border-radius: 3px;
 }
 
 .title{
-	padding-bottom: 20px;
-	text-shadow: 0.5px 0.5px grey;
+	font-family: Raleway;
+	font-weight:900;
+	text-shadow: 0px 0px 0px #000;
+	color: white;
+	padding: 0.5em;
+	text-decoration:underline;
+	text-decoration-style: dotted;
+}
+
+.top {
+	width: 100%;
+	background: white;
+	position: fixed;
+	top: 0px;
+	margin:auto;
+	text-align: center;
+}
+
+.floating{
+	border-color: white;
+	bottom: 30px;
+}
+
+.rcorners3:hover {
+    position:relative;
+    height:auto;
+    display:block;
+    z-index:999;
+    transform: scale(1.2);
+    border-color: white;
 }

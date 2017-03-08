@@ -1,11 +1,13 @@
 var mysql = require('mysql');
 
-var db = mysql.createConnection({
-	host:'localhost',
-	user:'root',
-	password:'1234',
-	database:'flicker'
+module.exports = {};
+
+module.exports.dbConnection = mysql.createConnection({
+    user: process.env.RDS_USERNAME ||'root',
+    password: process.env.RDS_PASSWORD || '',
+    database: 'flicker',
+    host: process.env.RDS_HOSTNAME,
+    port: process.env.RDS_PORT
 });
 
-// db.connect();
-module.exports =  db;
+// module.exports.dbConnection.connect();
