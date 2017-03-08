@@ -1,10 +1,11 @@
-<div ng-controller="appController">
-    <form ng-class="switch" class="formbox" name="getPics">
+<div ng-controller="appController" class="corner">
+    <form tag='former'	class={{nav_bar}} name="getPics">
     	<input type='text' placeholder="Type in the city name" ng-model='tags.requiredCity'>
     	<input type='text' placeholder="Type in the tag" ng-model='tags.requiredTag'>
     	<button ng-click='postRequest(); reset()'> Get Pictures </button>
 	</form>
-	<div ng-repeat="image in links">     
+	<div class = "testDiv"></div>
+	<div class = "imageDiv" ng-repeat="image in links">     
 	    <figure class="floating" >
 	      <img ng-src="{{ image.link }}" alt="Macaque in the trees" class="rcorners3" style='width:75%;' border="2" alt="Null">
 	      <figcaption class='title'>{{ image.title }}</figcaption>

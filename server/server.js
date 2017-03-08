@@ -45,7 +45,7 @@ app.post('/', function(req, res) {
                     url: 'https://api.flickr.com/services/rest/',
                     qs: {
                         method: 'flickr.photos.search',
-                        api_key: '3ae9a77c821b30752589b2368a5d8ef7',
+                        api_key: '519bef96f3f1304e71258378481aea09',
                         tags: req.body.tag,
                         woe_id: '2459115',
                         format: 'json',
@@ -62,7 +62,7 @@ app.post('/', function(req, res) {
                     url: 'https://api.flickr.com/services/rest/',
                     qs: {
                         method: 'flickr.places.find',
-                        api_key: '3ae9a77c821b30752589b2368a5d8ef7',
+                        api_key: '519bef96f3f1304e71258378481aea09',
                         query: req.body.city,
                         format: 'json',
                         nojsoncallback: '1'
@@ -73,7 +73,7 @@ app.post('/', function(req, res) {
                     }
                 };
 
-                console.log(req.body.city, req.body.tag, "REQ CITY TAG@@@@@@@@@@@@@@@@@@")
+                console.log(req.body.city, req.body.tag, "REQ body TAG@@@@@@@@@@@@@@@@@@")
                 rp(options2).then(function(results) {
                     var r1 = JSON.parse(results)
                     options.qs.woe_id = r1.places.place[0].woeid;

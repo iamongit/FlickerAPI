@@ -6,14 +6,33 @@ body{
     background-attachment: fixed;
 }
 .webText{
+	padding-top: 25%;
 	color:white;
 	font-size: 30px;
 }
 
 form {
+	padding-top: 20%;
+	text-align: center;
+	border-color: white;
+}
+
+/*#former{
 	padding-top: 23%;
 	text-align: center;
 	border-color: white;
+}*/
+
+.newf{
+	position: absolute;
+	margin: auto;
+	width: 100%;
+	top: 0px;
+	margin-top: 0px;
+	padding-top: 0%;
+	text-align: center;
+	border-color: white;
+	position: fixed;
 }
 
 
@@ -24,50 +43,76 @@ img{
 }
 
 input{
-	margin-top: 10px;
+	/*margin-top: 10px;*/
 	font-size: 30px;
 	width: 320px;
-	border:7px;
+	border:1px;
 	border-color: white;
 	border-radius: 3px;
 }
 
 button{
 	font-size: 30px; 
-	border:7px;
+	border:1px;
 	border-color: white;
 	border-radius: 3px;
 }
 
-.title{
-	font-family: Raleway;
-	font-weight:900;
-	text-shadow: 0px 0px 0px #000;
-	color: white;
-	padding: 0.5em;
-	text-decoration:underline;
-	text-decoration-style: dotted;
+.navbar-fixed {
+    margin-top: 20%;
+    z-index: 100;
+  	position: fixed;
+    width: 100%;
 }
 
-.top {
+.title{
+	font-family: Raleway;
+	font-weight:500;
+	text-shadow: 1px 1px 1px #000;
+	color: white;
+	padding: 0.5em;
+	/*text-decoration:underline;*/
+	text-decoration-style: dotted;
+	border-bottom: 1px dashed white;
+	/*border-bottom-style: dashed;*/
+}
+
+./*top {
 	width: 100%;
 	background: white;
 	position: fixed;
 	top: 0px;
 	margin:auto;
 	text-align: center;
-}
+}*/
 
 .floating{
+	margin-top: 30px;
 	border-color: white;
-	bottom: 30px;
+	/*bottom: 30px;*/
+}
+
+.rcorners3 {
+    /*border-bottom: 1px dashed white;   */
 }
 
 .rcorners3:hover {
     position:relative;
     height:auto;
-    display:block;
+    /*display:block;*/
     z-index:999;
-    transform: scale(1.2);
+    transform: scale(1.1);
     border-color: white;
 }
+
+.corner {
+	position: absolute;
+	margin: auto;
+	width: 100%;
+	top: 0px;
+}
+
+.testDiv {
+	padding-bottom: 50px;
+}
+

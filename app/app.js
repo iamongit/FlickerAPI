@@ -12,6 +12,7 @@ angular.module('app', ['ngRoute'])
         $scope.links = [],
         $scope.postRequest = function() {
             // $scope.switch = "top"
+            $scope.nav_bar = 'newf';
             $http({
                 method: 'POST',
                 url: '/',
