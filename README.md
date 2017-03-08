@@ -30,3 +30,11 @@ Github: iamongit
     run the schema.sql to set up database:
     mysql -u root < path/to/schema.sql
     node server/server.js
+
+
+> Link: http://custom-env.c7us5tmrsm.us-west-2.elasticbeanstalk.com/#!/
+
+License
+----
+
+MIT
