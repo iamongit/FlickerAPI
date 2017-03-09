@@ -2,9 +2,18 @@ body{
 	font-size: 25px;
 	text-align: center;
 	background: url(wall2.jpg) grey;
-	background-repeat: no-repeat;
+	background-size: cover;       
     background-attachment: fixed;
+    background-size: cover;
+    -webkit-background-size: cover; 
+
 }
+
+html {
+    height: 100vh; /* set viewport constraint */
+    min-height: 100%; /* enforce height */
+}
+
 .webText{
 	padding-top: 25%;
 	color:white;
@@ -16,12 +25,6 @@ form {
 	text-align: center;
 	border-color: white;
 }
-
-/*#former{
-	padding-top: 23%;
-	text-align: center;
-	border-color: white;
-}*/
 
 .newf{
 	position: absolute;
@@ -51,11 +54,20 @@ input{
 	border-radius: 3px;
 }
 
+
 button{
-	font-size: 30px; 
+	/*font-size: 30px; 
 	border:1px;
 	border-color: white;
-	border-radius: 3px;
+	border-radius: 3px;*/
+
+	color: #fff;
+  background-color: #6496c8;
+  text-shadow: -1px 1px #417cb8;
+  font-size: 30px;
+  border:1px;
+  border-radius: 3px;
+	border-color: white;
 }
 
 .navbar-fixed {
@@ -115,4 +127,3 @@ button{
 .testDiv {
 	padding-bottom: 50px;
 }
-
