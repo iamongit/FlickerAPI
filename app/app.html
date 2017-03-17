@@ -2,7 +2,10 @@
     <form tag='former'	class={{nav_bar}} name="getPics">
     	<input type='text' placeholder="Type in the city name" ng-model='tags.requiredCity'>
     	<input type='text' placeholder="Type in the tag" ng-model='tags.requiredTag'>
-    	<button ng-click='postRequest(); reset()'> Get Pictures </button>
+    	<button class = "button" ng-click='postRequest(); reset()'> Get Pictures </button>
+    	<div ng-if="spinner">
+          <img ng-src="./gif5.gif" style='width:50%; padding-top: 60px';>
+        </div>
 	</form>
 	<div class = "testDiv"></div>
 	<div class = "imageDiv" ng-repeat="image in links">     

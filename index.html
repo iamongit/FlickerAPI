@@ -5,14 +5,25 @@
     <script src="node_modules/angular/angular.js"></script>
     <script src="node_modules/angular-route/angular-route.js"></script>
     <script src="app/app.js"></script>
-    <script src="app/jquery_float."></script>
+    <script src="app/jquery_float.js"></script>
     <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" type="text/css" href="server/bower_components/please-wait/build/please-wait.css">
   </head>
   <body>
     <div ng-app="app">
       <div ng-view = '#/app'></div>
-      <div class = "webText"> Working in Progress..<br> 
-       © </div>
+      <div class = "webText"> 
+      This  website  is  still  under  construction. . . . . . . . <br> 
+      Uses Flicker API to search images based on the city and tag. <br> 
+      Makes two API calls to Flicker.<br> 
+      1.To get ID of the City.<br>
+      2.To get images based on ID and tag.<br>
+      Retreived  urls  and  titles  are  saved  in MYSQL database. <br> 
+      2nd  search  using  same  TAG  and  CITY  retreives urls and<br> 
+      titles from the database instead of making two new API calls.<br>
+      <div style="text-align-last: center;">© </div>
+       </div>
     </div>
+    <script type="text/javascript" src="server/bower_components/please-wait/build/please-wait.js"></script>
   </body>
 </html>

@@ -15,13 +15,16 @@ html {
 }
 
 .webText{
-	padding-top: 25%;
+	padding-top: 21%;
 	color:white;
-	font-size: 30px;
+	font-size: 18px;
+	/*text-align: justify;*/
+	margin: 0 auto;
+	width: 40em;
 }
 
 form {
-	padding-top: 20%;
+	padding-top: 18%;
 	text-align: center;
 	border-color: white;
 }

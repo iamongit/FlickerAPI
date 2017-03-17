@@ -7,9 +7,14 @@ const rp = require('request-promise')
 var co = require('co')
 var path = require('path');
 var bodyParser = require('body-parser');
+
+var Promise = require('bluebird');
 app.set('port', process.env.PORT || 2000);
 app.use(morgan('dev'));
 app.use(bodyParser.json());
+
+var outsideRequest = require('./apiCalls.js')
+var promiseOutsider = Promise.promisify(outsideRequest.getFlickerWoe);
 
 db.dbConnection.connect(function(err) {
     if (!err) {
@@ -30,7 +35,7 @@ console.log('inside server')
 app.post('/', function(req, res) {
     var request = require("request");
     console.log(req.body.city, req.body.tag, "REQ CITY TAG##############")
-    var selectQuery = "select * from flicker where tag ='" + req.body.tag + "'";
+    var selectQuery = "select * from flicker where tag ='" + req.body.tag + "' and city ='"+req.body.city+"'";
     console.log(selectQuery);
     db.dbConnection.query(selectQuery, function(err, results) {
         if (err) {
@@ -44,6 +49,12 @@ app.post('/', function(req, res) {
                     method: 'GET',
                     url: 'https://api.flickr.com/services/rest/',
                     qs: {
+                        oauth_consumer_key: '3545858eb5032abdd0032fd5d9663417',
+                        oauth_signature_method: 'HMAC-SHA1',
+                        oauth_timestamp: '1489035228',
+                        oauth_nonce: 'L4KdFn',
+                        oauth_version: '1.0',
+                        oauth_signature: 'RIMv0qyVVZCubzY5Y0I4YWYWwZ8=',
                         method: 'flickr.photos.search',
                         api_key: '519bef96f3f1304e71258378481aea09',
                         tags: req.body.tag,
@@ -61,6 +72,13 @@ app.post('/', function(req, res) {
                     method: 'GET',
                     url: 'https://api.flickr.com/services/rest/',
                     qs: {
+                    	oauth_consumer_key: '3545858eb5032abdd0032fd5d9663417',
+                        oauth_signature_method: 'HMAC-SHA1',
+                        oauth_timestamp: '1489035228',
+                        oauth_nonce: 'L4KdFn',
+                        oauth_version: '1.0',
+                        oauth_signature: 'RIMv0qyVVZCubzY5Y0I4YWYWwZ8=',
+                        method: 'flickr.photos.search',
                         method: 'flickr.places.find',
                         api_key: '519bef96f3f1304e71258378481aea09',
                         query: req.body.city,
@@ -72,6 +90,12 @@ app.post('/', function(req, res) {
                         'cache-control': 'no-cache'
                     }
                 };
+
+
+                // promiseOutsider(options2).then(function(error, results){
+                //     console.log('BEFORE THISISISIISIISI')
+                //     console.log(results, 'PROMOMOMOMOMOMOMOMO');
+                // })
 
                 console.log(req.body.city, req.body.tag, "REQ body TAG@@@@@@@@@@@@@@@@@@")
                 rp(options2).then(function(results) {
@@ -85,7 +109,7 @@ app.post('/', function(req, res) {
                         for (var i = 0; i < obj.photos.photo.length; i++) {
                             var temp = obj.photos.photo[i];
                             var finLink = 'https://farm' + temp.farm + '.staticflickr.com/' + temp.server + '/' + temp.id + '_' + temp.secret + '.jpg';
-                            var queryStr = "insert into `flicker` (`url`, `title`, `tag`) values('" + finLink + "','" + temp.title + "','" + req.body.tag + "')";
+                            var queryStr = "insert into `flicker` (`url`, `title`, `tag`,`city`) values('" + finLink + "','" + temp.title + "','" + req.body.tag + "','"+req.body.city+"')";
                             db.dbConnection.query(queryStr, function(err) {
                                 if (err) {
                                     console.log('ERROR', err);
@@ -95,7 +119,7 @@ app.post('/', function(req, res) {
                             });
                         }
 
-                        var selectQuery = "select * from flicker where tag ='" + req.body.tag + "'";
+                        var selectQuery = "select * from flicker where tag ='" + req.body.tag + "' and city ='"+req.body.city+"'";
                         // console.log(selectQuery);
                         db.dbConnection.query(selectQuery, function(err, results) {
                             if (err) {
